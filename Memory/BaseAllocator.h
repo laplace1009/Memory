@@ -5,6 +5,7 @@
 
 class BaseAllocator
 {
+
 public:
 	static auto Allocate(uint64 size) -> void*;
 	static auto Release(void* ptr) -> void;
