@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClCompile Include="BaseAllocator.cpp" />
     <ClCompile Include="Memory.cpp" />
+    <ClCompile Include="MemoryPool.cpp" />
     <ClCompile Include="StompAllocator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseAllocator.h" />
     <ClInclude Include="Macro.h" />
+    <ClInclude Include="MemoryPool.h" />
     <ClInclude Include="StompAllocator.h" />
     <ClInclude Include="Types.h" />
   </ItemGroup>

@@ -32,6 +32,9 @@
     <ClCompile Include="StompAllocator.cpp">
       <Filter>Memory</Filter>
     </ClCompile>
+    <ClCompile Include="MemoryPool.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseAllocator.h">
@@ -45,6 +48,9 @@
     </ClInclude>
     <ClInclude Include="Macro.h">
       <Filter>Macro</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryPool.h">
+      <Filter>Memory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
