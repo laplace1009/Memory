@@ -1,24 +1,25 @@
 #pragma once
 #include "Types.h"
 #include "Windows.h"
+#include "MemoryHeader.h"
 #include <queue>
+#include <mutex>
 
 class MemoryPool
 {
-	enum
-	{
-		BLOCK_SIZE = 0x1000,
-		MAX_BLOCK_COUNT = 10000,
-	};
+
 public:
-	MemoryPool(uint64 allocSize);
+	MemoryPool(uint32 allocSize);
 	~MemoryPool();
-	auto AllocateBlock() -> void*;
-	auto ReleaseBlock() -> void;
+	
+	auto Push(MemoryHeader* ptr) -> void;
+	auto Pop() -> MemoryHeader*;
 
 private:
-	uint64 mAllocSize;
-	void* mPoolAddress;
-	std::queue<void*> mMemoryBlocks;
+	uint32 mAllocSize = 0;
+	uint32 mAllocCount = 0;
+
+	std::queue<MemoryHeader*> mHeaders;
+	std::mutex mLock;
 };
 

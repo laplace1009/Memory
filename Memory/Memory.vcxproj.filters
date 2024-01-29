@@ -35,6 +35,9 @@
     <ClCompile Include="MemoryPool.cpp">
       <Filter>Memory</Filter>
     </ClCompile>
+    <ClCompile Include="MemoryHeader.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseAllocator.h">
@@ -50,6 +53,9 @@
       <Filter>Macro</Filter>
     </ClInclude>
     <ClInclude Include="MemoryPool.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryHeader.h">
       <Filter>Memory</Filter>
     </ClInclude>
   </ItemGroup>

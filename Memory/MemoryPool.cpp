@@ -1,22 +1,50 @@
 #include "MemoryPool.h"
 
-MemoryPool::MemoryPool(uint64 allocSize)
+MemoryPool::MemoryPool(uint32 allocSize)
 	: mAllocSize(allocSize)
-	, mPoolAddress(nullptr)
 {
-	mPoolAddress = ::VirtualAlloc(NULL, mAllocSize, MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE);
 }
 
 MemoryPool::~MemoryPool()
 {
+	while (mHeaders.empty() == false)
+	{
+		MemoryHeader* header = mHeaders.front();
+		mHeaders.pop();
+		::free(header);
+	}
 }
 
-auto MemoryPool::AllocateBlock() -> void*
+auto MemoryPool::Push(MemoryHeader* ptr) -> void
 {
+	std::lock_guard<std::mutex> g{ mLock };
+	ptr->SetAllocSize(0);
+	mHeaders.emplace(ptr);
+	--mAllocCount;
+}
+
+auto MemoryPool::Pop() -> MemoryHeader*
+{
+	MemoryHeader* header = nullptr;
+
+	{
+		std::lock_guard<std::mutex> guard{ mLock };
+		
+		if (mHeaders.empty() == false)
+		{
+			header = mHeaders.front();
+			mHeaders.pop();
+		}
+		else
+		{
+			header = reinterpret_cast<MemoryHeader*>(::malloc(mAllocSize));
+		}
+
+		if (header->GetAllocSize() == 0)
+			CRASH("Invalid Memory Allocate");
+
+		++mAllocCount;
+	}
 	
-	return nullptr;
-}
-
-auto MemoryPool::ReleaseBlock() -> void
-{
+	return header;
 }
