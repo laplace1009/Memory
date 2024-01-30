@@ -41,6 +41,9 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="FixedSizeMemory.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseAllocator.h">
@@ -62,6 +65,9 @@
       <Filter>Memory</Filter>
     </ClInclude>
     <ClInclude Include="MultiSizeMemory.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="FixedSizeMemory.h">
       <Filter>Memory</Filter>
     </ClInclude>
   </ItemGroup>

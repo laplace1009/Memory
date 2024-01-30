@@ -3,7 +3,7 @@
 #include "MemoryHeader.h"
 #include "MemoryPool.h"
 
-class MultiSizeMemory
+class alignas(16) MultiSizeMemory
 {
 	enum
 	{
