@@ -26,9 +26,6 @@
     <ClCompile Include="BaseAllocator.cpp">
       <Filter>Memory</Filter>
     </ClCompile>
-    <ClCompile Include="Memory.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="StompAllocator.cpp">
       <Filter>Memory</Filter>
     </ClCompile>
@@ -37,6 +34,12 @@
     </ClCompile>
     <ClCompile Include="MemoryHeader.cpp">
       <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +59,9 @@
       <Filter>Memory</Filter>
     </ClInclude>
     <ClInclude Include="MemoryHeader.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory.h">
       <Filter>Memory</Filter>
     </ClInclude>
   </ItemGroup>

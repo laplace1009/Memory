@@ -5,7 +5,7 @@ MemoryHeader::MemoryHeader(uint32 allocSize)
 {
 }
 
-auto MemoryHeader::AttachHeader(MemoryHeader* header, size_t allocSize) -> void*
+auto MemoryHeader::AttachHeader(MemoryHeader* header, uint32 allocSize) -> void*
 {
 	new(header)MemoryHeader(allocSize);
 	return reinterpret_cast<void*>(header + 1);

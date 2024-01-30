@@ -132,6 +132,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BaseAllocator.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Memory.cpp" />
     <ClCompile Include="MemoryHeader.cpp" />
     <ClCompile Include="MemoryPool.cpp" />
@@ -140,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="BaseAllocator.h" />
     <ClInclude Include="Macro.h" />
+    <ClInclude Include="Memory.h" />
     <ClInclude Include="MemoryHeader.h" />
     <ClInclude Include="MemoryPool.h" />
     <ClInclude Include="StompAllocator.h" />
