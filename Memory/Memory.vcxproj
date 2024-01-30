@@ -133,7 +133,7 @@
   <ItemGroup>
     <ClCompile Include="BaseAllocator.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Memory.cpp" />
+    <ClCompile Include="MultiSizeMemory.cpp" />
     <ClCompile Include="MemoryHeader.cpp" />
     <ClCompile Include="MemoryPool.cpp" />
     <ClCompile Include="StompAllocator.cpp" />
@@ -141,7 +141,7 @@
   <ItemGroup>
     <ClInclude Include="BaseAllocator.h" />
     <ClInclude Include="Macro.h" />
-    <ClInclude Include="Memory.h" />
+    <ClInclude Include="MultiSizeMemory.h" />
     <ClInclude Include="MemoryHeader.h" />
     <ClInclude Include="MemoryPool.h" />
     <ClInclude Include="StompAllocator.h" />

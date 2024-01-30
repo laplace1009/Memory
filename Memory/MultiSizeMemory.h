@@ -3,7 +3,7 @@
 #include "MemoryHeader.h"
 #include "MemoryPool.h"
 
-class Memory
+class MultiSizeMemory
 {
 	enum
 	{
@@ -13,8 +13,8 @@ class Memory
 	};
 
 public:
-	Memory();
-	~Memory() noexcept;
+	MultiSizeMemory();
+	~MultiSizeMemory() noexcept;
 
 	auto Allocate(uint32 size) -> void*;
 	auto Release(void* ptr) -> void;

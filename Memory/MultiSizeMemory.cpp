@@ -1,6 +1,6 @@
-﻿#include "Memory.h"
+﻿#include "MultiSizeMemory.h"
 
-Memory::Memory()
+MultiSizeMemory::MultiSizeMemory()
 {
 	uint32 size = 0;
 	uint32 tableIdx = 0;
@@ -33,7 +33,7 @@ Memory::Memory()
 	}
 }
 
-Memory::~Memory() noexcept
+MultiSizeMemory::~MultiSizeMemory() noexcept
 {
 	for (MemoryPool* pool : mPools)
 		delete pool;
@@ -41,7 +41,7 @@ Memory::~Memory() noexcept
 	mPools.clear();
 }
 
-auto Memory::Allocate(uint32 size) -> void*
+auto MultiSizeMemory::Allocate(uint32 size) -> void*
 {
 	MemoryHeader* header = nullptr;
 	const uint32 allocSize = size + sizeof(MemoryHeader);
@@ -56,7 +56,7 @@ auto Memory::Allocate(uint32 size) -> void*
 	return MemoryHeader::AttachHeader(header, allocSize);
 }
 
-auto Memory::Release(void* ptr) -> void
+auto MultiSizeMemory::Release(void* ptr) -> void
 {
 	MemoryHeader* header = MemoryHeader::DetachHeader(ptr);
 

@@ -35,7 +35,7 @@
     <ClCompile Include="MemoryHeader.cpp">
       <Filter>Memory</Filter>
     </ClCompile>
-    <ClCompile Include="Memory.cpp">
+    <ClCompile Include="MultiSizeMemory.cpp">
       <Filter>Memory</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
@@ -61,7 +61,7 @@
     <ClInclude Include="MemoryHeader.h">
       <Filter>Memory</Filter>
     </ClInclude>
-    <ClInclude Include="Memory.h">
+    <ClInclude Include="MultiSizeMemory.h">
       <Filter>Memory</Filter>
     </ClInclude>
   </ItemGroup>
