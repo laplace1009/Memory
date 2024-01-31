@@ -2,6 +2,7 @@
 #include "Types.h"
 #include "MemoryHeader.h"
 #include "MemoryPool.h"
+#include <array>
 
 class alignas(16) MultiSizeMemory
 {
@@ -21,6 +22,6 @@ public:
 
 private:
 	std::vector<MemoryPool*> mPools;
-	MemoryPool* mPoolTable[MAX_ALLOCATE_SIZE + 1];
+	std::array<MemoryPool*, MAX_ALLOCATE_SIZE + 1> mPoolTable{ nullptr };
 };
 
