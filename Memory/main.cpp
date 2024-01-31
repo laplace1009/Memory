@@ -1,12 +1,15 @@
 #include <iostream>
-#include "Memory.h"
+#include "MultiSizeMemory.h"
+#include "FixedSizeMemory.h"
 
 using namespace std;
 
 int main()
 {
-	Memory* m = new Memory();
-	int* ptr = static_cast<int*>(m->Allocate(sizeof(int)));
+	FixedSizeMemory* fm = new FixedSizeMemory();
+	int* ptr = reinterpret_cast<int*>(fm->Allocate(sizeof(int)));
 	*ptr = 4;
 	cout << *ptr << endl;
 }
+
+//46080

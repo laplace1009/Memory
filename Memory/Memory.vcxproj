@@ -138,6 +138,7 @@
     <ClCompile Include="MemoryHeader.cpp" />
     <ClCompile Include="MemoryPool.cpp" />
     <ClCompile Include="StompAllocator.cpp" />
+    <ClCompile Include="TLS.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseAllocator.h" />
@@ -147,6 +148,7 @@
     <ClInclude Include="MemoryHeader.h" />
     <ClInclude Include="MemoryPool.h" />
     <ClInclude Include="StompAllocator.h" />
+    <ClInclude Include="TLS.h" />
     <ClInclude Include="Types.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

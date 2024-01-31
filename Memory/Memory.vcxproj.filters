@@ -21,6 +21,9 @@
     <Filter Include="Macro">
       <UniqueIdentifier>{453115d1-1d92-4440-91a4-93ea7d079e6b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TLS">
+      <UniqueIdentifier>{6b839b6d-20d6-4d46-8cd7-d4e43d14c811}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseAllocator.cpp">
@@ -43,6 +46,9 @@
     </ClCompile>
     <ClCompile Include="FixedSizeMemory.cpp">
       <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="TLS.cpp">
+      <Filter>TLS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +75,9 @@
     </ClInclude>
     <ClInclude Include="FixedSizeMemory.h">
       <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="TLS.h">
+      <Filter>TLS</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
