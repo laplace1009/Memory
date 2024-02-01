@@ -29,22 +29,25 @@ auto MemoryPool::Pop() -> MemoryHeader*
 
 	{
 		std::lock_guard<std::mutex> guard{ mLock };
-		
+
 		if (mHeaders.empty() == false)
 		{
 			header = mHeaders.front();
 			mHeaders.pop();
 		}
-		else
-		{
-			header = reinterpret_cast<MemoryHeader*>(::malloc(mAllocSize));
-		}
 
-		if (header->GetAllocSize() == 0)
-			CRASH("Invalid Memory Allocate");
-
-		++mAllocCount;
 	}
-	
+
+	if (header == nullptr)
+	{
+		header = reinterpret_cast<MemoryHeader*>(::malloc(mAllocSize));
+	}
+	else
+	{
+		ASSERT_CRASH(header->GetAllocSize() == 0);
+	}
+
+	++mAllocCount;
+
 	return header;
 }

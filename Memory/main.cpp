@@ -6,10 +6,12 @@ using namespace std;
 
 int main()
 {
-	FixedSizeMemory* fm = new FixedSizeMemory();
-	int* ptr = reinterpret_cast<int*>(fm->Allocate(sizeof(int)));
+	MultiSizeMemory* m = new MultiSizeMemory();
+	int* ptr = reinterpret_cast<int*>(m->Allocate(sizeof(int)));
 	*ptr = 4;
 	cout << *ptr << endl;
+	m->Release(ptr);
+	double* dPtr = reinterpret_cast<double*>(m->Allocate(sizeof(double)));
+	*dPtr = 3.141592;
+	cout << *dPtr << endl;
 }
-
-//46080
