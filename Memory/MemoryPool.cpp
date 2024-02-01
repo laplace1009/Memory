@@ -20,7 +20,7 @@ auto MemoryPool::Push(MemoryHeader* ptr) -> void
 	std::lock_guard<std::mutex> g{ mLock };
 	ptr->SetAllocSize(0);
 	mHeaders.emplace(ptr);
-	--mAllocCount;
+	ASSERT_CRASH(mAllocCount-- > 0);
 }
 
 auto MemoryPool::Pop() -> MemoryHeader*
@@ -29,7 +29,7 @@ auto MemoryPool::Pop() -> MemoryHeader*
 
 	{
 		std::lock_guard<std::mutex> guard{ mLock };
-
+		
 		if (mHeaders.empty() == false)
 		{
 			header = mHeaders.front();
@@ -48,6 +48,6 @@ auto MemoryPool::Pop() -> MemoryHeader*
 	}
 
 	++mAllocCount;
-
+	
 	return header;
 }

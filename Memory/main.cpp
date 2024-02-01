@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-	MultiSizeMemory* m = new MultiSizeMemory();
+	FixedSizeMemory<32>* m = new FixedSizeMemory<32>();
 	int* ptr = reinterpret_cast<int*>(m->Allocate(sizeof(int)));
 	*ptr = 4;
 	cout << *ptr << endl;

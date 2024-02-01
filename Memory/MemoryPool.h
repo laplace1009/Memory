@@ -4,6 +4,7 @@
 #include "MemoryHeader.h"
 #include <queue>
 #include <mutex>
+#include <atomic>
 
 class MemoryPool
 {
@@ -17,7 +18,7 @@ public:
 
 private:
 	uint32 mAllocSize = 0;
-	uint32 mAllocCount = 0;
+	std::atomic<uint32> mAllocCount = 0;
 
 	std::queue<MemoryHeader*> mHeaders;
 	std::mutex mLock;
