@@ -1,5 +1,6 @@
 # MemoryLibrary
 ### Windows용 Custom Memory Allocate
+#### C++ 20 MSVC
 ##### BaseAllocators
 * MemroyHeader를 만들어서 디버그에 유용하게 만듬
 * BaseAllocator는 c스타일을 사용한 malloc과 해제인 free를 이용해서 기본적인 할당을 만듬
